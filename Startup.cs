@@ -32,7 +32,7 @@ namespace csharp_vacio
             {
                 endpoints.MapGet("/", async context =>
                 {
-                    await context.Response.WriteAsync("Hello World!");
+                endpoints.UseSoapEndpoint<iFarenheit>("/Farenheit.svc", new SoapEncoderOptions(), SoapSerializer.DataContractSerializer);
                 });
             });
         }
